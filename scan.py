@@ -25,7 +25,7 @@ def main():
     parser.add_argument('-fd', '--ftp proftpd-backdoor detection ', help='Run ftp-proftpd-backdoor detection ')
     args = parser.parse_args()
     target = args.target
-    backdoor = args.hs
+    #backdoor = args.(-hs)
     # Start scan with clear terminal
     subprocess.call('clear', shell=True)
     
