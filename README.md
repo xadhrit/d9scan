@@ -3,19 +3,34 @@
 
 d9scan is a script written in Python3 that allows  port scanning, Backdoor Detection on networks.  The program is interactive and simply requires you to run it to begin.  Obtain open ports , asks for option which script you want to run. All scripts are backed by NMAP.
 
+
+<p align="" >
+<img src="https://twitter.com/xadhrit/status/1395822555580141570/photo/1" alt="d9scan" />
+</p>
+
+```
+**Usage**
+./d9scan~$ python3 scan.py <target>
+
+:( target is required..
+
+```
+
+
+
 **Scripts**
 
 ```bash
 >  nmap -v -A scan
->  http-malware-host Detection
->  http-dlink-backdoor Detection
->  ftp-proftpd-backdoor Detection
+>  http-malware-host Detection (recommanded malware detection) 
+>  http-dlink-backdoor Detection (dlink backdoor detection)
+>  ftp-proftpd-backdoor Detection (ftp proftpd detection runs on port 21)
 
 ```
 
 ## Requirements
 Python3 must be installed on your system in order to function
-Pip3 for installation via PyPi repository
+Install bs4 via pip using `pip install bs4`
 
 ## Installation
 
