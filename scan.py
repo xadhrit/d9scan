@@ -10,9 +10,11 @@ import time
 import sys
 import argparse
 import subprocess
+import requests 
 from printcolors import *
 from datetime import  datetime
-   
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup as bs
    
 # Main Function
 def main():
@@ -20,12 +22,9 @@ def main():
     #argument parser
     parser = argparse.ArgumentParser(description='Network Scanning with d9scan')
     parser.add_argument('target', type=str, help='Domain or IP address of Target')
-    parser.add_argument('-hs', '--http-dlink-backdoor detection',help='Run http-dlink-backdoor detection')
-    parser.add_argument('-ms', '--http-malware-host detection', help='Run http-malware-host detection')
-    parser.add_argument('-fd', '--ftp proftpd-backdoor detection ', help='Run ftp-proftpd-backdoor detection ')
     args = parser.parse_args()
     target = args.target
-    #backdoor = args.(-hs)
+    
     # Start scan with clear terminal
     subprocess.call('clear', shell=True)
     
@@ -45,7 +44,7 @@ def main():
            :::: ::  ::::: ::  :::: ::    ::: :::  ::   :::   ::   ::  
           :: :  :    : :  :   :: : :     :: :: :   :   : :  ::    :   """)
     print(" \n")
-    print("%s\t\td9scan - Port Scanner with Backdoor Detection "%(yellow))
+    print("%s\t\td9scan - Network Scanner with Backdoor Detection "%(yellow))
  
     time.sleep(1)
     print("\n")
@@ -58,11 +57,12 @@ def main():
         sys.exit()
     
     
-    print("Scanning target "+ t_ip, end='')
+    print("Scanning target :  {} - {} ".format(target,t_ip), end='')
     print(" |  Time started: "+ str(datetime.now()))
     
     t1 = datetime.now()
 
+ 
     def generalscan(target):
 
        s = "nmap -v -A {}".format(target)
@@ -72,27 +72,35 @@ def main():
        os.system(s)
        
    
-    generalscan(target)                                                                             
+    generalscan(target) 
+    """                                                                             
+    def safebrowsing(target):
        
-
+       req  =requests.get("https://transparencyreport.google.com/safe-browsing/search?url={}".format(target))
+       soup = bs(req.content, "html.parser")   
+       print("%s\n"%white) 
+       print(soup) 
+    safebrowsing(target)  
+    """ 
     t2 = datetime.now()
     total = t2 - t1
     #print("Port scan completed in "+str(total))
-    print("-" * 60)
+    print("^" * 60)
     print("%s Recommended Nmap scan:"%white)
-    print("*" * 60)
+    print("-" * 60)
     
     #print("%snmap -p{ports} -sV -sC -T4 -Pn -oA {ip} {ip}".format(ports=",".join(discovered_ports), ip=target)%blue)
    
     outfile = "nmap -sV --script=http-malware-host {ip}".format(ip=target)
     print(outfile)
-    print("*" * 60)
+    print("-" * 60)
     backdoor = "nmap -sV --script http-dlink-backdoor {ip}".format(ip=target) 
     ftpbackdoor = "nmap --script ftp-proftpd-backdoor -p 21 {ip}".format(ip=target)
     t3 = datetime.now()
     total1 = t3 - t1
 
-#Nmap Integration (in progress)
+    
+#Nmap Integration 
 
     def automate():
        choice = '0'
@@ -132,7 +140,13 @@ def main():
                   total1 = t3-t1
                   print("Ftp Backdoor Scan completed in "+str(total1)) 
                   print("%sPress 2 to go back and enter to quit..."%white)
-                  input()
+                  uinput = input()
+                  if uinput == '2':
+                      automate()
+                  elif uinput():
+                      exit()
+                  else:
+                      sys.exit(0)
               except FileExistsError as e:
                   print(e)
                   exit()
@@ -146,7 +160,13 @@ def main():
                   total1 = t3-t1
                   print("Combined scan completed in " + str(total1))
                   print("%s Press 3 to go back and enter to quit..."%white)
-                  input()
+                  uinput = input()
+                  if uinput == '3':
+                      automate()
+                  elif uinput():
+                      exit()
+                  else:
+                      sys.exit(0)
               except FileExistsError as e:
                   print(e)
                   exit()
