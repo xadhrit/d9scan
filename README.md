@@ -5,7 +5,7 @@ d9scan is a script written in Python3 that allows  port scanning, Backdoor Detec
 
 
 <p align="" >
-<img src="https://twitter.com/xadhrit/status/1395822555580141570/photo/1" alt="d9scan" />
+<img src="https://pbs.twimg.com/media/E171I5gVIAAG5wa?format=png&name=large" alt="d9scan" />
 </p>
 
 ```
