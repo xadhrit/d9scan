@@ -10,9 +10,9 @@ d9scan is a script written in Python3 that allows  port scanning, Backdoor Detec
 
 ```
 **Usage**
+
 ./d9scan~$ python3 scan.py <target>
 
-:( target is required..
 
 ```
 
