@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-# d9scan -  by Adhrit
-# https://github.com/xadhrit/d9scan
 
+"""
+d9scan -  by Adhrit
+https://github.com/xadhrit/d9scan
 
+"""
 
 import socket
 import os
@@ -28,8 +30,7 @@ def main():
     # Start scan with clear terminal
     subprocess.call('clear', shell=True)
     
-    #welcome d9scan poison banner.
-    
+    #welcome d9scan poison banner.    
     
     print("""   
             
@@ -73,15 +74,6 @@ def main():
        
    
     generalscan(target) 
-    """                                                                             
-    def safebrowsing(target):
-       
-       req  =requests.get("https://transparencyreport.google.com/safe-browsing/search?url={}".format(target))
-       soup = bs(req.content, "html.parser")   
-       print("%s\n"%white) 
-       print(soup) 
-    safebrowsing(target)  
-    """ 
     t2 = datetime.now()
     total = t2 - t1
     #print("Port scan completed in "+str(total))
