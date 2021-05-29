@@ -1,4 +1,6 @@
-""" enable some pretty colors 
+"""enable some pretty colors 
+colors module
+
 """
 
 import sys
