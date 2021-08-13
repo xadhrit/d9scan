@@ -16,7 +16,13 @@ d9scan is a script written in Python3 that allows  port scanning, Backdoor Detec
 
 ```
 
+or
 
+```
+~$ chmod +x  scan.sh
+~$ ./scan.sh
+
+```
 
 **Scripts**
 
@@ -31,6 +37,13 @@ d9scan is a script written in Python3 that allows  port scanning, Backdoor Detec
 ## Requirements
 Python3 must be installed on your system in order to function
 Install bs4 via pip using `pip install bs4`
+
+or
+
+```
+chmod +x install.sh
+
+```
 
 ## Installation
 
