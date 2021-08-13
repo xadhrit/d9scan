@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$OSTYPE"  == "linux-gnu" || "darwin"  ]]; 
+if [[ "$OSTYPE"  == "linux-gnu" || "darwin" || "cygwin" || "msys" || "freebsd"  ]]; 
 then
    echo -e "Donwloading requirements\n"
    python3 -m pip  install -r  requirements.txt && python3 scan.py -h
