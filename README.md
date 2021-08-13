@@ -43,6 +43,7 @@ or
 ```
 chmod +x install.sh
 
+./install.sh
 ```
 
 ## Installation
