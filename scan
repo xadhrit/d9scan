@@ -1,20 +1,23 @@
-#!/bin/bash
+#!/bin/bash  -e
 
 CYAN="\e[36m"
 GREEN="\e[32m"
 ENDCOLOR="\e[0m"
+
+echo -e "${GREEN}"
+pyfiglet d9scan
 
 printf "${CYAN} d9scan from shell :) \n\n"
 printf "Enter target's domain or IP : "
 read IP 
 
 function options(){
-   printf "----------------- Choose One option -----------------------${GREEN} "
+   echo -e "${ENDCOLOR}----------------- Choose One option -----------------------${GREEN} "
    echo -e  " 1 for http-malware-host scan"
    echo -e  " 2 for http-dlink-backdoor scan"
    echo -e  " 3 for ftp-proftpd-backdoor scan"
-   echo -e "  4 for all  "
-   echo -e "  5 Exit   "
+   echo -e  " 4 for all  "
+   echo -e  " 5 Exit   "
    read OPTION
 
    
@@ -42,11 +45,10 @@ function options(){
    else
        printf "Invalid Option, Exiting..... \n"
        exit 0
-
    fi
 
 }
-"${GREEN} nmap -v -A ${IP} \n"
+echo -e "${GREEN} nmap -v -A ${IP}"
 nmap -v -A $IP
 options
 exit 
