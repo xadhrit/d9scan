@@ -5,7 +5,7 @@ d9scan is a script written in Python3 that allows  port scanning, Backdoor Detec
 
 
 <p align="center" >
-<img src="https://pbs.twimg.com/media/E171I5gVIAAG5wa?format=png&name=large" height="350px" width="500px"  alt="d9scan" />
+<img src="img/banner.png" height="350px" width="500px"  alt="d9scan" />
 </p>
 
 ```
@@ -56,6 +56,12 @@ git clone https://github.com/xadhrit/d9scan.git
 
 ```bash
 sudo ln -s $(pwd)/scan.py /usr/local/bin/scan
+```
+
+**SYN protection Detection**
+
+```
+go run main.go
 ```
 
 ## LICENSE

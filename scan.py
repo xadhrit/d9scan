@@ -45,7 +45,7 @@ def main():
            :::: ::  ::::: ::  :::: ::    ::: :::  ::   :::   ::   ::  
           :: :  :    : :  :   :: : :     :: :: :   :   : :  ::    :   """)
     print(" \n")
-    print("%s\t\td9scan - Network Scanner with Backdoor Detection "%(yellow))
+    print("%s\t\td9scan - Network Scanner with Backdoor Detection  + SYN protection filter scanning  "%(yellow))
  
     time.sleep(1)
     print("\n")
