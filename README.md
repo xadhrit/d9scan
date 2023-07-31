@@ -4,7 +4,7 @@
 d9scan is a script written in Python3 that allows  port scanning, Backdoor Detection on networks.  The program is interactive and simply requires you to run it to begin.  Obtain open ports , asks for option which script you want to run. All scripts are backed by NMAP.
 
 
-<p align="center" >
+<p align="center">
 <img src="img/banner.png" height="350px" width="500px"  alt="d9scan" />
 </p>
 
